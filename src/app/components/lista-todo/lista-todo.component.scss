@@ -10,7 +10,7 @@
 
 .inputTarea{
   margin-bottom: 20px;
-  width: 100%;
+  width: 110%;
   height: 3rem;
   border-radius: 12px;
   border: 1.5px solid gray;
@@ -18,5 +18,24 @@
   font-size: 1rem;
 }
 
+.contenedora{
+  background-color: white;
+  max-height: 340px;
+  overflow: scroll;
+  border-radius: 12px;
+  width: 110%;
+  display: flow-root;
+}
 
+.contenido{
+  max-width: 100%;
+}
+
+:host ::ng-deep {
+  .p-divider.p-divider-horizontal {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
 

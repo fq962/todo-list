@@ -1,0 +1,34 @@
+:host ::ng-deep {
+  .p-card{
+    width: 100%;
+    height: 40px;
+    // colocar contenido del p-card centrado
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+  }
+}
+
+.iconitos{
+  display: flex;
+  margin-right: 20;
+  margin-left: 150px;
+  align-items: center;
+  justify-content: space-between;
+  width: 12%;
+  height: 23.98px;
+  align-self: center;
+}
+
+.row {
+  margin: auto;
+  margin-top: .8%;
+  margin-bottom: .8%;
+  height: 33%;
+  min-height: 33%;
+  max-height: 33%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 110%;
+}

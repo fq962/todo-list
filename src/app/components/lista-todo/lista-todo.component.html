@@ -1,12 +1,13 @@
 <div class="listita">
   <div class="contenido">
     <input class="inputTarea" type="text" placeholder="Hola, ¿Que haremos hoy?">
-    <!-- <span class="p-float-label tarea">
-      <input id="float-input" type="text" pInputText>
-      <label for="float-input">Hola, ¿Que haremos hoy?</label>
-    </span> -->
     <span>
-      <p-listbox [readonly]=true [options]="cities" [(ngModel)]="SelectItem" optionLabel="name" [style]="{'width':'30rem'}"></p-listbox>
+      <div class="contenedora">
+        <app-card-tarea></app-card-tarea>
+        <p-divider></p-divider>
+        <app-card-tarea></app-card-tarea>
+
+      </div>
     </span>
   </div>
 </div>

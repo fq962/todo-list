@@ -9,9 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PrimeNgModule } from './modules/prime-ng/prime-ng.module';
+import { CardTareaComponent } from './components/card-tarea/card-tarea.component';
 
 @NgModule({
-  declarations: [AppComponent, BannerComponent, ListaTodoComponent],
+  declarations: [AppComponent, BannerComponent, ListaTodoComponent, CardTareaComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
