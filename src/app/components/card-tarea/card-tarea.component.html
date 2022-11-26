@@ -1,11 +1,26 @@
 <p-card>
   <!-- <span class="content"> -->
-    <div class="row no-padding">
-      <label >Ir al supermercado por leche</label>
-      <span class="iconitos">
+    <div class="contieneInfo">
+      <div class="info row no-padding">
+        <label>{{infoTarea.descripcion}}</label>
+      </div>
+      <div class="iconos">
+        <span class="iconito">
           <i (click)="tareaHecha()" class="fas fa-check-square btnCheck"></i>
+        </span>
+        <span class="iconito">
           <i (click)="borrarTarea()" class="fas fa-trash btnTrash"></i>
-      </span>
+        </span>
+      </div>
     </div>
+    <!-- <div class="contieneInfo">
+      <div class="row no-padding">
+        <label >Ir al supermercado por leche</label>
+        <span class="iconitos">
+            <i (click)="tareaHecha()" class="fas fa-check-square btnCheck"></i>
+            <i (click)="borrarTarea()" class="fas fa-trash btnTrash"></i>
+        </span>
+      </div>
+    </div> -->
   <!-- </span> -->
 </p-card>
