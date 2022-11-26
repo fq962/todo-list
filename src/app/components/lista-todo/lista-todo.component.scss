@@ -20,11 +20,22 @@
 
 .contenedora{
   background-color: white;
-  max-height: 340px;
-  overflow: scroll;
+  max-height: 300px;
+  // overflow: hidden;
   border-radius: 12px;
   width: 110%;
   display: flow-root;
+  // overflow-y: auto;
+}
+
+.prueba{
+  background-color: white;
+  border-radius: 12px;
+  height: 340px;
+  width: 110%;
+  max-height: 335px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .contenido{
@@ -37,5 +48,26 @@
     padding: 0;
     width: 100%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
