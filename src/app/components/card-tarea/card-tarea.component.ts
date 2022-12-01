@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { infoTarea } from 'src/app/interfaces/info-tarea.interface';
+import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
   selector: 'app-card-tarea',
@@ -9,7 +10,7 @@ import { infoTarea } from 'src/app/interfaces/info-tarea.interface';
 export class CardTareaComponent {
   @Input() infoTarea: infoTarea;
 
-  constructor() {}
+  constructor(private tareasSecvice: TareasService) {}
 
   ngOnInit(): void {
     console.log(this.infoTarea);
@@ -19,7 +20,11 @@ export class CardTareaComponent {
     console.log('Tarea hecha');
   }
 
-  borrarTarea() {
-    console.log('Borrar tarea');
+  eliminarTarea(tareaId: number) {
+    this.tareasSecvice.eliminarTarea(tareaId).subscribe((res) => {
+      if (res) {
+        this.tareasSecvice.getTareas();
+      }
+    });
   }
 }

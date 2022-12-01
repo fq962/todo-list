@@ -11,14 +11,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimeNgModule } from './modules/prime-ng/prime-ng.module';
 import { CardTareaComponent } from './components/card-tarea/card-tarea.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
-  declarations: [AppComponent, BannerComponent, ListaTodoComponent, CardTareaComponent],
+  declarations: [
+    AppComponent,
+    BannerComponent,
+    ListaTodoComponent,
+    CardTareaComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PrimeNgModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

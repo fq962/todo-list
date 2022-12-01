@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { infoTarea } from 'src/app/interfaces/info-tarea.interface';
+import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
   selector: 'app-lista-todo',
@@ -7,47 +8,30 @@ import { infoTarea } from 'src/app/interfaces/info-tarea.interface';
   styleUrls: ['./lista-todo.component.scss'],
 })
 export class ListaTodoComponent {
-  cities: City[];
   tareas: infoTarea[] = [];
-  SelectItem?: City;
+  nuevaTarea: string = '';
 
-  constructor() {
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' },
-    ];
-  }
+  constructor(private tareasSecvice: TareasService) {}
 
   ngOnInit(): void {
-    this.tareas = [
-      {
-        id: 1,
-        descripcion: 'Ir al supermercado por carne',
-        realizada: false,
-      },
-      {
-        id: 2,
-        descripcion: 'Hacer tarea de matematicas',
-        realizada: false,
-      },
-      {
-        id: 3,
-        descripcion: 'Probando las tareas',
-        realizada: false,
-      },
-      {
-        id: 4,
-        descripcion: 'Probando las tareas',
-        realizada: false,
-      },
-    ];
+    this.getTareas();
+    console.log(this.tareas.length);
   }
-}
 
-interface City {
-  name: string;
-  code: string;
+  getTareas() {
+    this.tareasSecvice.getTareas().subscribe((res) => {
+      this.tareas = res;
+    });
+  }
+
+  agregarTarea(event: any) {
+    if (event.keyCode === 13) {
+      event.currentTarget.value = '';
+      this.tareasSecvice.agregarTarea(this.nuevaTarea).subscribe((res) => {
+        if (res) {
+          this.getTareas();
+        }
+      });
+    }
+  }
 }

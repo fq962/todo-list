@@ -1,7 +1,10 @@
 <div class="listita">
   <div class="contenido">
-    <input class="inputTarea" type="text" placeholder="Hola, ¿Que haremos hoy?">
+    <input class="inputTarea" (keyup.enter)="agregarTarea($event)" [(ngModel)]="nuevaTarea" type="text" placeholder="Hola, ¿Que haremos hoy?">
       <div class="prueba">
+        <div class="contenedora" *ngIf="this.tareas.length === 0">
+          <label>No hay tareas agregadas</label>
+        </div>
         <div class="contenedora" *ngFor="let tarea of tareas">
           <app-card-tarea [infoTarea]="tarea"></app-card-tarea>
           <p-divider></p-divider>

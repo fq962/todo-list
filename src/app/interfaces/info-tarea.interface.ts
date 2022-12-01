@@ -1,6 +1,7 @@
 // Crear interfaz para la informacion de la tarea
 export interface infoTarea {
-  id: number;
-  descripcion: string;
-  realizada: boolean;
+  tareaId: number;
+  tarea: string;
+  estaFinalizada: boolean;
+  fechaModificacion: string;
 }

@@ -2,14 +2,14 @@
   <!-- <span class="content"> -->
     <div class="contieneInfo">
       <div class="info row no-padding">
-        <label>{{infoTarea.descripcion}}</label>
+        <label>{{infoTarea.tarea}}</label>
       </div>
       <div class="iconos">
         <span class="iconito">
           <i (click)="tareaHecha()" class="fas fa-check-square btnCheck"></i>
         </span>
         <span class="iconito">
-          <i (click)="borrarTarea()" class="fas fa-trash btnTrash"></i>
+          <i (click)="eliminarTarea(infoTarea.tareaId)" class="fas fa-trash btnTrash"></i>
         </span>
       </div>
     </div>
