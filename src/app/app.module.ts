@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PrimeNgModule } from './modules/prime-ng/prime-ng.module';
 import { CardTareaComponent } from './components/card-tarea/card-tarea.component';
+import { TableModule } from 'primeng/table';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
