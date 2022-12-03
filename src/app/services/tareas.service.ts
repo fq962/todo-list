@@ -56,6 +56,24 @@ export class TareasService {
     );
   }
 
+  // actualiza el estado de la tarea
+  actualizaTarea(tareaId: number, estaFinalizada: boolean) {
+    const body = {
+      finalizada: estaFinalizada,
+    };
+    return this.http.patch(`${WEB_SERVICE}/tareas/${tareaId}`, body).pipe(
+      map((res) => {
+        if (res) {
+          return res;
+        }
+        return false;
+      }),
+      catchError((err) => {
+        console.log('SERVICE ERROR: ', err);
+        return [err];
+      })
+    );
+  }
   // hacer service para eliminar una tarea
   eliminarTarea(tareaId: number) {
     let params = new HttpParams();

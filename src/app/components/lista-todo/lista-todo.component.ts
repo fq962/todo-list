@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { infoTarea } from 'src/app/interfaces/info-tarea.interface';
 import { TareasService } from 'src/app/services/tareas.service';
+import { Subscription } from 'rxjs';
+import { ShareDataService } from 'src/app/services/shared_data/share-data.service';
 
 @Component({
   selector: 'app-lista-todo',
@@ -10,12 +12,26 @@ import { TareasService } from 'src/app/services/tareas.service';
 export class ListaTodoComponent {
   tareas: infoTarea[] = [];
   nuevaTarea: string = '';
+  subscripciones: { [key: string]: Subscription } = {};
 
-  constructor(private tareasSecvice: TareasService) {}
+  constructor(
+    private shareData: ShareDataService,
+    private tareasSecvice: TareasService
+  ) {
+    this.subscribirse();
+  }
 
   ngOnInit(): void {
     this.getTareas();
     console.log(this.tareas.length);
+  }
+
+  subscribirse(): void {
+    this.subscripciones['tareaBorrada$'] = this.shareData
+      .getTareaBorrada()
+      .subscribe((borrada) => {
+        borrada ? this.getTareas() : false;
+      });
   }
 
   getTareas() {
